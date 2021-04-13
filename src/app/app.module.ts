@@ -31,6 +31,10 @@ import { LeaderService } from './services/leader.service';
 import { LoginComponent } from './login/login.component';
 import { MatDialogModule} from '@angular/material/dialog';
 
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +62,10 @@ import { MatDialogModule} from '@angular/material/dialog';
     MatFormFieldModule, 
     MatInputModule,
     MatCheckboxModule,
-    FormsModule 
+    FormsModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   providers: [DishService , PromotionService , LeaderService],
   entryComponents :[LoginComponent],
