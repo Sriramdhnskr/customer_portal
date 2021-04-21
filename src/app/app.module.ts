@@ -35,6 +35,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+import { CustomerFinancialSheetComponent } from './customer-financial-sheet/customer-financial-sheet.component';
+import { CustomerMasterDataComponent } from './customer-master-data/customer-master-data.component';
+import { CustomerMenusComponent } from './customer-menus/customer-menus.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +52,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    CustomerProfileComponent,
+    CustomerDashboardComponent,
+    CustomerFinancialSheetComponent,
+    CustomerMasterDataComponent,
+    CustomerMenusComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +77,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MatSelectModule,
     MatSlideToggleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [DishService , PromotionService , LeaderService],
   entryComponents :[LoginComponent],

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Dish } from '../shared/dish';
+import { visibility, flyInOut, expand } from '../animations/app.animation';
 
 import { DishService } from '../services/dish.service';
 
@@ -54,7 +55,17 @@ const DISH = {
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
-  styleUrls: ['./dishdetail.component.scss']
+  styleUrls: ['./dishdetail.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+  },
+  animations: [
+    visibility(),
+    flyInOut(),
+    expand()
+  ]
+
 })
 
 export class DishdetailComponent implements OnInit {
@@ -67,7 +78,8 @@ export class DishdetailComponent implements OnInit {
 
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
-    this.dish = this.dishservice.getDish(id);
+    this.dishservice.getDish(id)
+    .then((dish) => this.dish = dish);
   }
 
   goBack(): void {

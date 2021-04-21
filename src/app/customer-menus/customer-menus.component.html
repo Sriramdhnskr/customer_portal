@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
   <span><img src="/assets/images/logo.png" height=30 width=41></span>
-  <a mat-button routerLink = '/home' routerLinkActive="active"><span class="fa fa-home fa-lg"></span> Home</a>
-  <a mat-button routerLink = '/about' routerLinkActive="active"><span class="fa fa-info fa-lg"></span> About</a>
-  <a mat-button routerLink = '/menu' routerLinkActive="active"><span class="fa fa-list fa-lg"></span> Menu</a>
-  <a mat-button routerLink = '/contactus' routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span> Contact</a>
+  <a mat-button routerLink = '/profile' routerLinkActive="active"><span class="fa fa-user fa-lg"></span> Profile</a>
+  <a mat-button routerLink = '/dashboard' routerLinkActive="active"><span class="fa fa-tachometer fa-lg"></span> dashboard</a>
+  <a mat-button routerLink = '/finance_sheet' routerLinkActive="active"><span class="fa fa-list fa-lg"></span> finance_sheet</a>
+  <a mat-button routerLink = '/master_data' routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span> master_data</a>
   <span class="flex-spacer"></span>
   <a mat-button (click)="onlogin()"><span class="fa fa-sign-in fa-lg"></span> LOGIN </a>
 </mat-toolbar>
@@ -16,8 +16,8 @@
     fxLayoutAlign.sm="start center" 
     fxLayoutAlign.gt-sm="center center" 
     fxLayoutGap="200px">
-    <h1>Customer Portal</h1>
-  <!-- <div fxFlex fxFlex.gt-sm="30%">
+
+  <div fxFlex fxFlex.gt-sm="30%">
     <h1>Customer Portal</h1>
     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations
       will tickle your culinary senses!</p>
@@ -25,5 +25,5 @@
   <div fxFlex fxFlex.gt-sm="20%">
     <img src="/assets/images/logo.png" alt="Logo">
   </div>
-  <div fxFlex></div> -->
+  <div fxFlex></div>
 </div>

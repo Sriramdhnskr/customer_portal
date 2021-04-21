@@ -7,12 +7,15 @@ import { LEADERS } from '../shared/leaders';
 })
 export class LeaderService {
 
-  getLeaders(): leader[] {
-    return LEADERS;
+  getLeaders(): Promise<leader[]> {
+    
+    return new Promise(resolve => { setTimeout(() =>  resolve(LEADERS), 2000
+      )});
+
   }
 
-  getFeaturedLeader(): leader {
-    return LEADERS.filter((l) => l.featured)[0];
+  getFeaturedLeader(): Promise<leader> {
+    return new Promise(resolve => { setTimeout(() =>  resolve(LEADERS.filter((l) => l.featured)[0]),2000)});
   }
   
 
