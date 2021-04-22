@@ -41,6 +41,7 @@ import { CustomerDashboardComponent } from './customer-dashboard/customer-dashbo
 import { CustomerFinancialSheetComponent } from './customer-financial-sheet/customer-financial-sheet.component';
 import { CustomerMasterDataComponent } from './customer-master-data/customer-master-data.component';
 import { CustomerMenusComponent } from './customer-menus/customer-menus.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { CustomerMenusComponent } from './customer-menus/customer-menus.componen
     MatSelectModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
   providers: [DishService , PromotionService , LeaderService],
   entryComponents :[LoginComponent],
