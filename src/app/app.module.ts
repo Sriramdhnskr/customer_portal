@@ -42,6 +42,7 @@ import { CustomerFinancialSheetComponent } from './customer-financial-sheet/cust
 import { CustomerMasterDataComponent } from './customer-master-data/customer-master-data.component';
 import { CustomerMenusComponent } from './customer-menus/customer-menus.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard} from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatProgressSpinnerModule,
     HttpClientModule
   ],
-  providers: [DishService , PromotionService , LeaderService],
+  providers: [DishService , PromotionService , LeaderService ,AuthGuard],
   entryComponents :[LoginComponent],
   bootstrap: [AppComponent]
 })

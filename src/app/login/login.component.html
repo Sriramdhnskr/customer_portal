@@ -37,8 +37,8 @@
 
 
   <mat-toolbar color="primary">
-  Login
- <span class="flex-spacer"></span>
+    Login
+   <span class="flex-spacer"></span>
  <button mat-button mat-dialog-close>&times;</button> 
 </mat-toolbar>
 
@@ -51,20 +51,19 @@
       <mat-form-field>
         <input matInput placeholder="Username" type="text" [(ngModel)]="uname"  name="uname"  required>
         <!-- <mat-error *ngIf = "uname.errors?.maxlength">Username not excedded 5 characters</mat-error>  -->
-        <!-- <mat-error *ngIf = "uname.errors?.required">Username is required</mat-error> -->
+        <!-- <mat-error>Username is required</mat-error> -->
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Password" type="password" [(ngModel)]="pass1" name="psw"  required>
-        <!-- <mat-error *ngIf = "password.errors?.required">Password is required</mat-error> -->
+       <!-- <mat-error *ngIf = "password.errors?.required">Password is required</mat-error> -->
       </mat-form-field>
-
-      <button (click)="fun()" type="submit">Login</button>
       <!-- <mat-checkbox [(ngModel)]="user.remember" name="remember">Remember Me</mat-checkbox> -->
     </p>
    </mat-dialog-content>
   <mat-dialog-actions>
     <span class="flex-spacer"></span>
     <button mat-button mat-dialog-close>Cancel</button>
+    <button (click)="fun()" mat-button type="submit">Login</button>
     <button type="submit" (click)="showname()" mat-button class="background-primary text-floral-white" >Submit</button>
   </mat-dialog-actions>
 </form> 

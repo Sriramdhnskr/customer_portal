@@ -57,6 +57,50 @@ request.post(options,function (error, response, body) {
 
 
 })
+
+app.post('/profile',function(req,res){
+
+    user = req.body.uname;
+    console.log(req.body);
+
+   const postData=`
+   <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:ZCUST_PROFILE_DET>
+         <CUSTOMER_ID>${user}</CUSTOMER_ID>
+      </urn:ZCUST_PROFILE_DET>
+   </soapenv:Body>
+</soapenv:Envelope>`;
+ var options={
+    url:'http://dxktpipo.kaarcloud.com:50000/XISOAPAdapter/MessageServlet?senderParty=&senderService=BC_PROFILE_DET&receiverParty=&receiverService=&interface=SI_PROFILE_DET_INTERFACE&interfaceNamespace=http://dsr.com',
+    headers: { 'Content-Type': 'application/xml',
+    'Authorization':'Basic UE9VU0VSOlRlY2hAMjAyMQ=='},
+
+    body : postData
+
+    }
+
+request.post(options,function (error, response, body) {        
+
+        if (!error && response.statusCode == 200) {
+
+            var result1 = parser.xml2json(body, {compact: true, spaces: 4});
+
+            result1=JSON.parse(result1);
+
+            
+
+            res.send(result1);
+
+        }
+
+    })
+
+
+
+})
+
 app.listen(3000,()=>{
     console.log("Server connected");
 
